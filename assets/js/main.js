@@ -4,52 +4,35 @@
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 var numeriRandom = [];
 var numeriIndovinati = [];
-var numeriUtente = [];
 
-while (numeriRandom.length < 5) {
+while (numeriRandom.length < 5) { //creo 5 numeri casuali tra 1 e 50 🐱‍👤
   numeroRandom = randomNumberInRange(1, 50);
-  if (numeriRandom.includes(numeroRandom)) {
-  } else {
-    numeriRandom.push(numeroRandom);
+  if (numeriRandom.includes(numeroRandom)) {  //se il numero è già incluso nell'arrey generane un altro🐱‍👤
+  } else {  //altrimenti🐱‍👤
+    numeriRandom.push(numeroRandom);  //pushalo nell'array🐱‍👤
   }
 }
 console.log(numeriRandom);
 
-$("#numeri").text(numeriRandom);
+$("#numeri").text(numeriRandom); //punto il p nell'html🐱‍👤
 
-setTimeout(function(){
+setTimeout(function(){  //definisco una funzione temporale a 5sec🐱‍👤
   var numeriDom = $("#numeri").text(numeriRandom);
-  numeriDom.hide();
+  numeriDom.hide(); //dopo 5 sec nascondo i p dal DOM🐱‍👤
 }, 5000);
 
 
-setTimeout(function(){
-  for (var i = 0; i < 5; i++) {
-    var richiestaNum = parseInt(prompt("Che numeri hai visto?"));
-      if (numeriRandom.includes(richiestaNum)) {
-        numeriIndovinati.push(richiestaNum);
+setTimeout(function(){  //definisco funzione temporale che entra dopo 6 secondi🐱‍👤
+  for (var i = 0; i < 5; i++) { //chiedo all'utente 5 numeri🐱‍👤
+    var richiestaNum = parseInt(prompt("Che numeri hai visto?")); //richiedo i numeri🐱‍👤
+      if (numeriRandom.includes(richiestaNum)) {  //se il numero è nell'array dei numeri randomici🐱‍👤
+        numeriIndovinati.push(richiestaNum);  //pushalo nell'array dei numeri indovinati🐱‍👤
       }
-      $("#risultato").text("Hai indovinato " + numeriIndovinati.length + " numeri! I numeri sono: " + numeriIndovinati);
+      $("#risultato").text("Hai indovinato " + numeriIndovinati.length + " numeri! I numeri sono: " + numeriIndovinati);  //stampo il risultato🐱‍👤
 }
 }, 6000);
 
 console.log(numeriIndovinati);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // FUNZIONI
 function randomNumberInRange(min, max) {

@@ -26,13 +26,12 @@ setTimeout(function(){
 setTimeout(function(){
   for (var i = 0; i < 5; i++) {
     var richiestaNum = parseInt(prompt("Che numeri hai visto?"));
-    if (numeriRandom.includes(richiestaNum)) {
-      numeriIndovinati.push(richiestaNum);
-    }
-    $("#risultato").text("Hai indovinato " + numeriIndovinati.length + " numeri! I numeri sono: " + numeriIndovinati);
+      if (numeriRandom.includes(richiestaNum)) {
+        numeriIndovinati.push(richiestaNum);
+      }
+      $("#risultato").text("Hai indovinato " + numeriIndovinati.length + " numeri! I numeri sono: " + numeriIndovinati);
 }
 }, 6000);
-
 
 console.log(numeriIndovinati);
 
